@@ -1,6 +1,4 @@
 <?php
-
-    // Error reporting, turn off when we launch
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
@@ -42,7 +40,7 @@
         if (!empty($fail)) {
             echo '<p><strong>Validation failed.</strong></p>';
             echo '<p>Please fix:' .htmlspecialchars(implode(', ', $fail), ENT_QUOTES, 'UTF-8').'</p>';
-            exit; //If the aboves run stop the script.
+            exit; 
         }
 
         $emailBody = "You received a new inquiry:\r\n\r\n";
@@ -52,12 +50,11 @@
 
         $fromAddress = "no-reply@yourdomain.com";
 
-        // Create the email headers (metadata for the message)
-        $headers = "From: Your domain <{$fromAddress}>\r\n"; // Sender name and address
-        $headers .= "Reply-To: {$visitor_email}\r\n"; // Where replies will go
-        $headers .= "MIME-Version: 1.0\r\n"; // Email standard version
-        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n"; // Plain text email
-        $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n"; // Identifies PHP mailer
+        $headers = "From: Your domain <{$fromAddress}>\r\n"; 
+        $headers .= "Reply-To: {$visitor_email}\r\n"; 
+        $headers .= "MIME-Version: 1.0\r\n"; 
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n"; 
+        $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
         $sent = mail($recipent, $subject, $emailBody, $headers);
 

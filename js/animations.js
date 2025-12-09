@@ -24,7 +24,6 @@ gsap.from("#text-col p, #text-col .btn", {
   ease: "power2.out" 
 });
 
-// Animate featured work as user scrolls from the left
 gsap.utils.toArray(".work-box").forEach((box, index) => {
   gsap.from(box, {
     scrollTrigger: {
@@ -32,14 +31,13 @@ gsap.utils.toArray(".work-box").forEach((box, index) => {
       start: "top 80%",
       toggleActions: "play none none none"
     },
-    x: index % 2 === 0 ? -100 : 100, // even boxes come from left, odd from right
+    x: index % 2 === 0 ? -100 : 100, 
     opacity: 0,
     duration: 0.3,
     ease: "power2.out"
   });
 });
 
-// Animate portfolio boxes as user scrolls from the left
 gsap.utils.toArray(".portfolio-box").forEach((box, index) => {
   gsap.from(box, {
     scrollTrigger: {
@@ -47,7 +45,7 @@ gsap.utils.toArray(".portfolio-box").forEach((box, index) => {
       start: "top 85%",
       toggleActions: "play none none none"
     },
-    x: index % 2 === 0 ? -50 : 50, // alternating left/right
+    x: index % 2 === 0 ? -50 : 50, 
     opacity: 0,
     duration: 0.3,
     ease: "power1.out",
@@ -55,8 +53,6 @@ gsap.utils.toArray(".portfolio-box").forEach((box, index) => {
   });
 });
 
-
-// Animate contact CTA
 gsap.from(".contact-cta .contact-text", {
   scrollTrigger: {
     trigger: ".contact-cta",
@@ -84,7 +80,6 @@ gsap.from(".contact-cta .contact-action", {
 
 // BURPLE
 
-// Animate hero image and hero content
 gsap.from(".seven-hero-img", {
   duration: 1.5,
   y: -100,
@@ -92,7 +87,6 @@ gsap.from(".seven-hero-img", {
   ease: "power2.out"
 });
 
-// Animate overview text elements sequentially
 gsap.from(".seven-overview-title", {
   duration: 1,
   x: -50,
@@ -118,7 +112,6 @@ gsap.from(".seven-overview-desc, .seven-overview-tags", {
   ease: "power2.out"
 });
 
-// Animate goal section
 gsap.from(".seven-goal-text", {
   scrollTrigger: {
     trigger: ".seven-goal-text",
@@ -131,7 +124,6 @@ gsap.from(".seven-goal-text", {
   ease: "power2.out"
 });
 
-// Animate process section
 gsap.from(".seven-process-text", {
   scrollTrigger: {
     trigger: ".seven-process-text",
@@ -144,7 +136,6 @@ gsap.from(".seven-process-text", {
   ease: "power2.out"
 });
 
-// Animate problem section
 gsap.from(".seven-problem-text", {
   scrollTrigger: {
     trigger: ".seven-problem-text",
@@ -157,11 +148,10 @@ gsap.from(".seven-problem-text", {
   ease: "power2.out"
 });
 
-// Animate deep dive images alternating from left/right
 gsap.utils.toArray(".seven-deepdive-wrapper").forEach(function(box, index) {
   let fromX = 0;
-  if (index === 0 || index === 2) fromX = -100; // even items from left
-  else fromX = 100; // odd items from right
+  if (index === 0 || index === 2) fromX = -100; 
+  else fromX = 100; 
 
   gsap.from(box, {
     scrollTrigger: {
@@ -176,7 +166,6 @@ gsap.utils.toArray(".seven-deepdive-wrapper").forEach(function(box, index) {
   });
 });
 
-// Animate result section
 gsap.from(".seven-result-text", {
   scrollTrigger: {
     trigger: ".seven-result-text",
@@ -189,7 +178,6 @@ gsap.from(".seven-result-text", {
   ease: "power2.out"
 });
 
-// Animate video section
 gsap.from(".seven-video-element", {
   scrollTrigger: {
     trigger: ".seven-video-element",
